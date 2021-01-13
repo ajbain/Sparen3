@@ -1,0 +1,50 @@
+﻿@model Sparen.Models.BankAccountDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Here's your account information:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AccountNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountLevel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model=> model.AccountLevel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NameGiven)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model=> model.NameGiven)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model=> model.AccountType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model=> model.AccountType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model=>model.Interest)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model=> model.Interest)
+        </dd>
+    </dl>
+</div>
+        
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AccountNumber }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

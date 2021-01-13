@@ -1,0 +1,126 @@
+﻿@model IEnumerable<Sparen.Models.TransactionListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Your Transactions:</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+    
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentBalance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StoreName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfTransaction)
+            </th>
+            <th></th>
+        </tr>
+
+
+        @foreach (var item in Model.Where(e => e.AccountType == Sparen.Data.AccountType.Checking).OrderByDescending(e=>e.DateOfTransaction))
+            
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentBalance)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StoreName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccountType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TransactionType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfTransaction)
+                </td>
+
+
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TransactionId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.TransactionId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.TransactionId })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentBalance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StoreName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfTransaction)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Where(e => e.AccountType == Sparen.Data.AccountType.Savings).OrderByDescending(e => e.DateOfTransaction))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentBalance)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StoreName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccountType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TransactionType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfTransaction)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TransactionId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.TransactionId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.TransactionId })
+                </td>
+            </tr>
+        }
+
+    </table>

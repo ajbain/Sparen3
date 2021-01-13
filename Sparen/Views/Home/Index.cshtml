@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <img src="~/Images/logo.png"/>
+    <p class="lead">Welcome to Sparen, the world's foremost online-only banking app. </p>
+    @*<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Don't Have An Account?</h2>
+        <p>
+            Start here! You'll need to provide some information to create an account. You can register here if you are not a returning user. 
+        </p>
+        <p><a class="btn btn-default" @Html.ActionLink("Register Here", "Register", "Account") </a></p>
+    </div>
+    <div class="col-md-6">
+        <h2>Want to Learn More?</h2>
+        <p>Sparen ranked #1 for customer service in 2020! We are the leading online-only bank. To learn more about who we are, or why we only are an online platform, click below!</p>
+        <p><a class="btn btn-default" @Html.ActionLink("About Us", "About", "Home")</a></p>
+    </div>
+    @*<div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>*@
+</div>

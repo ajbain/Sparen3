@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Sparen.Models.BankAccountListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Your Accounts</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Balance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameGiven)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model=> model.AccountLevel)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        @*<a href="~/Views/BankAccount/Details.cshtml">~/Views/BankAccount/Details.cshtml</a>*@
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.AccountNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Balance)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NameGiven)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AccountType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AccountLevel)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.AccountNumber }) |
+        @Html.ActionLink("Details", "Details", new { id = item.AccountNumber }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.AccountNumber })
+    </td>
+</tr>
+    }
+
+</table>
